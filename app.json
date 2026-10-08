@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "Solar Inspect",
+    "slug": "solar-inspection-app",
+    "version": "1.0.0",
+    "scheme": "solarinspect",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.solarfield.inspections",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Camera is used to capture photo evidence during equipment inspections.",
+        "NSLocationWhenInUseUsageDescription": "Location is used to tag inspections and photos with GPS coordinates."
+      }
+    },
+    "android": {
+      "package": "com.solarfield.inspections",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Camera is used to capture photo evidence during equipment inspections."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Location is used to tag inspections and photos with GPS coordinates."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}
